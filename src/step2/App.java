@@ -31,6 +31,9 @@ public class App {
                 System.out.println("결과 : " + result);
             }
 
+            // 저장된 결과 목록 출력
+            System.out.println("저장된 결과 : " + calculator.getResults());
+
             // 반복문 종료 조건 : exit 입력 시 종료
             System.out.print("계산을 계속 하겠습니까? (exit 입력 시 종료) : ");
             String answer = scanner.next();
