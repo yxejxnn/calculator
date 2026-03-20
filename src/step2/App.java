@@ -8,6 +8,9 @@ public class App {
         // 스캐너 호출
         Scanner scanner = new Scanner(System.in);
 
+        // Calculator 객체 생성
+        Calculator calculator = new Calculator();
+
         // 무한반복
         while (true) {
 
@@ -21,38 +24,11 @@ public class App {
             System.out.print("연산자 입력 (+ - * /) : ");
             char op = scanner.next().charAt(0); // 입력 받은 문자열의 첫 번째 문자를 저장
 
-            // 계산 결과를 저장할 변수
-            int result = 0;
-
-            // 입력 받은 값을 계산함
-            switch (op) {
-                case '+':
-                    result = num1 + num2;
-                    System.out.println("결과 : " + result);
-                    break;
-
-                case '-':
-                    result = num1 - num2;
-                    System.out.println("결과 : " + result);
-                    break;
-
-                case '*':
-                    result = num1 * num2;
-                    System.out.println("결과 : " + result);
-                    break;
-
-                case '/':
-                    // 나눗셈에서는 두 번째에 입력 받는 수는 0이 올 수 없음
-                    if (num2 == 0) {
-                        System.out.println("0으로 나눌 수 없습니다.");
-                    } else {
-                        result = num1 / num2;
-                        System.out.println("결과 : " + result);
-                    }
-                    break;
-
-                default:
-                    System.out.println("잘못된 연산자 입니다.");
+            // Carculator 클래스로 계산 수행
+            int result = calculator.calculate(num1, num2, op);
+            // 0으로 나눴을 때 결과에 0이 출력 되지 않게 해줌
+            if (!(op == '/' && num2 == 0)) {
+                System.out.println("결과 : " + result);
             }
 
             // 반복문 종료 조건 : exit 입력 시 종료
