@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Calculator {
 
     // 연산 결과들을 저장할 리스트
-    ArrayList<Integer> results = new ArrayList<>();
+    private ArrayList<Integer> results = new ArrayList<>();
 
     // 입력 받은 정수와 연산자를 사용해서 계산을 수행할 메서드
     public int calculate(int num1, int num2, char op) {
@@ -40,5 +40,10 @@ public class Calculator {
 
         // 계산 결과 반환
         return result;
+    }
+
+    // 저장된 계산 결과들을 보여주는 메서드 (Getter)
+    public ArrayList<Integer> getResults() {
+        return results;
     }
 }
