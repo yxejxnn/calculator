@@ -46,4 +46,11 @@ public class Calculator {
     public ArrayList<Integer> getResults() {
         return results;
     }
+
+    // 가장 먼저 저장된 결과를 삭제하는 메서드
+    public void removeResult() {
+        if (!results.isEmpty()) {
+            results.remove(0);
+        }
+    }
 }

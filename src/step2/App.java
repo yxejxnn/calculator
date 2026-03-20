@@ -34,6 +34,15 @@ public class App {
             // 저장된 결과 목록 출력
             System.out.println("저장된 결과 : " + calculator.getResults());
 
+            // 삭제 여부 물어보기
+            System.out.print("가장 처음 저장된 결과를 삭제하시겠습니까? (yes 입력 시 삭제) : ");
+            String removeAnswer = scanner.next();
+            if (removeAnswer.equals("yes")) {
+                calculator.removeResult();
+                // 삭제 후 결과 출력
+                System.out.println("삭제 후 저장된 결과 : " + calculator.getResults());
+            }
+
             // 반복문 종료 조건 : exit 입력 시 종료
             System.out.print("계산을 계속 하겠습니까? (exit 입력 시 종료) : ");
             String answer = scanner.next();
