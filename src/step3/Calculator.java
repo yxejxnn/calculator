@@ -8,24 +8,24 @@ public class Calculator {
     private ArrayList<Integer> results = new ArrayList<>();
 
     // 입력 받은 정수와 연산자를 사용해서 계산을 수행할 메서드
-    public int calculate(int num1, int num2, char op) {
+    public int calculate(int num1, int num2, OpType opType) {
         int result = 0; // 계산 결과를 저장할 변수
 
         // 연산 기능
-        switch (op) {
-            case '+':
+        switch (opType) {
+            case ADD:
                 result = num1 + num2;
                 results.add(result);
                 break;
-            case '-':
+            case SUBTRACT:
                 result = num1 - num2;
                 results.add(result);
                 break;
-            case '*':
+            case MULTIPLY:
                 result = num1 * num2;
                 results.add(result);
                 break;
-            case '/':
+            case DIVIDE:
                 if (num2 == 0) {
                     System.out.println("0으로 나눌 수 없습니다.");
                 }
@@ -34,8 +34,6 @@ public class Calculator {
                     results.add(result);
                 }
                 break;
-            default:
-                System.out.println("잘못된 연산자입니다.");
         }
 
         // 계산 결과 반환
