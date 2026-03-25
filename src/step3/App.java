@@ -1,6 +1,7 @@
 package step3;
 
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class App {
     public static void main(String[] args) {
@@ -42,6 +43,15 @@ public class App {
 
             // 저장된 결과 목록 출력
             System.out.println("저장된 결과 : " + calculator.getResults());
+
+            // 비교할 기준값 입력
+            System.out.print("조회할 기준값 입력 : " );
+            double target = scanner.nextDouble();
+
+            // 기준값보다 큰 결과값 출력
+            System.out.println("조건에 맞는 값 : " + calculator.getResults().stream()
+                    .filter(value -> value.doubleValue() > target)
+                    .collect(Collectors.toList()));
 
             // 삭제 여부 입력
             System.out.print("가장 먼저 저장된 결과를 삭제하시겠습니까? (yes 입력 시 삭제) : ");
