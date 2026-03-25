@@ -62,6 +62,10 @@ public class Calculator<T > {
                     break;
             }
         }
+        // 결과값 저장
+        if (result != null) {
+            results.add(result);
+        }
 
         // 계산 결과 반환
         return result;
