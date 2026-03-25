@@ -7,7 +7,7 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
 
-        Calculator calculator = new Calculator();
+        Calculator<Integer> calculator = new Calculator<>();
 
         while (true) {
             System.out.print("첫 번째 정수 입력 : ");
@@ -21,7 +21,7 @@ public class App {
             OpType opType = OpType.fromChar(op);
 
             // Calculator 클래스를 이용해 계산 수행
-            int result = calculator.calculate(num1, num2, opType);
+            Integer result = calculator.calculate(num1, num2, opType);
 
             // 0으로 나누는 경우가 아닐 때만 결과 출력
             if (!(op == '/' && num2 == 0)) {
