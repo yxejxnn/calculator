@@ -43,7 +43,7 @@ public class App {
             System.out.println("계산을 계속 하겠습니까? (exit 입력 시 종료) : ");
             String answer = scanner.next();
 
-            if (answer.equals("yes")) {
+            if (answer.equals("exit")) {
                 break;
             }
 
