@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Calculator<T > {
 
     // 연산 결과들을 저장할 리스트
-    private ArrayList<T> results = new ArrayList<>();
+    private final ArrayList<T> results = new ArrayList<>();
 
-    // 입력 받은 정수와 연산자를 사용해서 계산을 수행할 메서드
+    // 입력 받은 숫자와 연산자를 사용해서 계산을 수행할 메서드
     public T calculate(T num1, T num2, OpType opType) {
         T result = null; // 계산 결과를 저장할 변수
         Number n1 = (Number) num1;
