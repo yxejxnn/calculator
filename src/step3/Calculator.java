@@ -37,6 +37,32 @@ public class Calculator<T > {
             }
         }
 
+        // 실수 계산
+        else if (num1 instanceof Double && num2 instanceof Double) {
+            Double n1 = (Double) num1;
+            Double n2 = (Double) num2;
+
+            switch (opType) {
+                case ADD:
+                    result = (T) Double.valueOf(n1 + n2);
+                    break;
+                case SUBTRACT:
+                    result = (T) Double.valueOf(n1 - n2);
+                    break;
+                case MULTIPLY:
+                    result = (T) Double.valueOf(n1 * n2);
+                    break;
+                case DIVIDE:
+                    if (n2 == 0.0) {
+                        System.out.println("0으로 나눌 수 없습니다.");
+                    }
+                    else {
+                        result = (T) Double.valueOf(n1 / n2);
+                    }
+                    break;
+            }
+        }
+
         // 계산 결과 반환
         return result;
     }
